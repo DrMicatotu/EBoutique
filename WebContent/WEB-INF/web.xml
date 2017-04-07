@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>EBoutiquePrototypeOrg</display-name>
+
+	<!-- Welcome -->
+
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/view/index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+
+		<!-- jsp -->
+
+		<servlet-name>Create Product</servlet-name>
+		<jsp-file>/WEB-INF/view/CreateProduct.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Create Product</servlet-name>
+		<url-pattern>/CreateProduct</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>panier</servlet-name>
+		<jsp-file>/WEB-INF/view/panier.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>panier</servlet-name>
+		<url-pattern>/panier</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>catalogue</servlet-name>
+		<jsp-file>/WEB-INF/view/catalogue.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>catalogue</servlet-name>
+		<url-pattern>/catalogue</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteProduct</servlet-name>
+		<jsp-file>/WEB-INF/view/DeleteProduct.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteProduct</servlet-name>
+		<url-pattern>/DeleteProduct</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateProduct</servlet-name>
+		<jsp-file>/WEB-INF/view/UpdateProduct.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateProduct</servlet-name>
+		<url-pattern>/UpdateProduct</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>indexDemo</servlet-name>
+		<jsp-file>/WEB-INF/indexDemo.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>indexDemo</servlet-name>
+		<url-pattern>/indexDemo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Header</servlet-name>
+		<jsp-file>/WEB-INF/view/header.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Header</servlet-name>
+		<url-pattern>/header</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<jsp-file>/WEB-INF/view/login.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Footer1</servlet-name>
+		<jsp-file>/WEB-INF/view/footer1.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Footer1</servlet-name>
+		<url-pattern>/footer1</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Footer2</servlet-name>
+		<jsp-file>/WEB-INF/view/footer2.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Footer2</servlet-name>
+		<url-pattern>/footer2</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>Footer</servlet-name>
+		<jsp-file>/WEB-INF/view/footer.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Footer</servlet-name>
+		<url-pattern>/footer</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlets -->
+
+	<servlet>
+		<servlet-name>CreateProductServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.CreateProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateProductServlet</servlet-name>
+		<url-pattern>/CreateProductServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CatalogueServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.CatalogueServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CatalogueServlet</servlet-name>
+		<url-pattern>/CatalogueServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.DeleteProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<url-pattern>/DeleteProductServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UpdateProductServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.UpdateProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateProductServlet</servlet-name>
+		<url-pattern>/UpdateProductServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>PanierServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.PanierServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PanierServlet</servlet-name>
+		<url-pattern>/PanierServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DetailServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.DetailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DetailServlet</servlet-name>
+		<url-pattern>/DetailServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>DeconnectServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.DeconnectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeconnectServlet</servlet-name>
+		<url-pattern>/DeconnectServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>OrderServlet</servlet-name>
+		<servlet-class>fr.m2i.formation.controleur.OrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrderServlet</servlet-name>
+		<url-pattern>/orderServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+
+	<!-- Ressource context tomcat -->
+
+	<resource-ref>
+		<description>MySQL Datasource example</description>
+		<res-ref-name>jdbc/eboutiqueDb</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+</web-app>
