@@ -1,11 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <title>Index</title>
-</head>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/shop-homepage.css" rel="stylesheet">
+
+<!-- Footer -->
+<link href="css/CSSFooter.css" rel="stylesheet">
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
 
 <style>
 .error {
@@ -13,6 +24,10 @@
 	color: red;
 }
 </style>
+
+
+</head>
+
 
 <!-- Custom CSS -->
 
@@ -26,7 +41,7 @@
 
 				<div class="row carousel-holder">
 
-					<div class="col-md-12" >
+					<div class="col-xs-12">
 						<div id="carousel-example-generic" class="carousel slide"
 							data-ride="carousel">
 							<ol class="carousel-indicators">
@@ -61,7 +76,7 @@
 
 				</div>
 
-				<div class="col-md-12">
+				<div class="col-xs-12">
 					<div class="jumbotron">
 						<br />
 						<h1>Bienvenue sur Eboutique</h1>
@@ -72,51 +87,37 @@
 						</p>
 
 						<c:if test="${error}">
-							<div class="col-md-3">
+							<div class="row col-xs-10">
 								<p class="error">Erreur sur le login et/ou le mot de passe</p>
 							</div>
 						</c:if>
 						<br />
 
+						<div class="row">
+							<form action="LoginServlet" method="post">
 
-						<form action="LoginServlet" method="post">
-							<table>
-								<tr>
-									<td><div class="form-group">
-											<label for="usr">login :</label></td>
-									<td>&nbsp;<input type="text" class="form-control"
-										name="login">
-										</div></td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td><div class="form-group">
-											<label for="pwd">mot de passe :</label></td>
-									<td>&nbsp;<input class="form-control" name="password"
-										type="password" id="pwd" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-								</tr>
 
-								<tr>
-									<td><input type="submit" class="btn btn-default"
-										value="Valider" /></td>
-								</tr>
-							</table>
+								<div class="form-group row col-xs-offset-1 col-xs-6">
+									<label for="usr">login :</label> 
+									<input type="text" class="form-control row col-xs-offset-1 col-xs-6" name="login">
+								</div>
+
+
+								<div class="form-group row col-xs-offset-1 col-xs-6">
+									<label for="pwd">mot de passe :</label>
+									<input class="form-control col-xs-offset-1 col-xs-6" name="password" type="password" id="pwd" />
+
+
+									<input type="submit" class="btn btn-default row col-xs-offset-12"
+										value="Valider" />
+								</div>
+						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<%@include file="/WEB-INF/view/footer.jsp"%>
 </body>
 

@@ -3,34 +3,16 @@
 	<div class="footer" id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+				<div class="col-xs-3">
 					<h3>Lorem Ipsum</h3>
 					<ul>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
+						<li>Lorem Ipsum is simply dummy text of the printing and
+							typesetting industry. Lorem Ipsum has been the industry's
+							standard dummy text ever since the 1500s, when an unknown printer
+							took a galley.</li>
 					</ul>
 				</div>
-				<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-					<h3>Lorem Ipsum</h3>
-					<ul>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-					</ul>
-				</div>
-				<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-					<h3>Lorem Ipsum</h3>
-					<ul>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-						<li><a href="#"> Lorem Ipsum </a></li>
-					</ul>
-				</div>
-				<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+				<div class="col-xs-5">
 					<h3>Lorem Ipsum</h3>
 					<ul>
 						<li><a href="#"> Lorem Ipsum </a></li>
@@ -52,15 +34,15 @@
 						</li>
 					</ul>
 					<ul class="social">
-						<li><a href="#"> <i class=" fa fa-facebook">   </i>
+						<li><a href="#"> <i class=" fa fa-facebook"> Â  </i>
 						</a></li>
-						<li><a href="#"> <i class="fa fa-twitter">   </i>
+						<li><a href="#"> <i class="fa fa-twitter"> Â  </i>
 						</a></li>
-						<li><a href="#"> <i class="fa fa-google-plus">   </i>
+						<li><a href="#"> <i class="fa fa-google-plus"> Â  </i>
 						</a></li>
-						<li><a href="#"> <i class="fa fa-pinterest">   </i>
+						<li><a href="#"> <i class="fa fa-pinterest"> Â  </i>
 						</a></li>
-						<li><a href="#"> <i class="fa fa-youtube">   </i>
+						<li><a href="#"> <i class="fa fa-youtube"> Â  </i>
 						</a></li>
 					</ul>
 				</div>
@@ -73,7 +55,7 @@
 
 	<div class="footer-bottom">
 		<div class="container">
-			<p class="pull-left">Copyright © Footer E-commerce Plugin 2017.
+			<p class="pull-left">Copyright Â© Footer E-commerce Plugin 2017.
 				All right reserved.</p>
 			<div class="pull-right">
 				<ul class="nav nav-pills payments">
