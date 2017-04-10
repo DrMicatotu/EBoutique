@@ -12,20 +12,31 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import fr.m2i.formation.service.impl.*;
+
 public class OrderServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-		
 		
 		try {
-
+			
+			String login = "test"; //TODO get from session
+			
+			OrderManager manager = new OrderManager();
+			
+			manager.createOrder()
+			
+			
 			JSONObject jObj = new JSONObject(request.getParameter("cart"));
 			
-
-			
 			Iterator it = jObj.keys(); //gets all the keys
-
+			
+			
+			
+			
+			
+			
+			/*
 			while(it.hasNext())
 			{
 			    Object key = it.next(); // get key
@@ -36,9 +47,9 @@ public class OrderServlet extends HttpServlet {
 			    System.out.println(o.get("prixCart"));
 			    System.out.println(o.get("quantityCart")); 
 			}			
-
+	*/
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}

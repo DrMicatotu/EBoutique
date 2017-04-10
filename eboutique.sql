@@ -43,10 +43,10 @@ CREATE TABLE product (
 --
 
 INSERT INTO product (name, selling_price) VALUES
-('PC configuration de base', 400),
-('PC configuration jeux vidéos', 800),
-('MacBook configuration de base', 600),
-('MacBook configuration performance', 1000);
+('PC configuration de base', 399.99),
+('PC configuration jeux vidéos', 799.99),
+('MacBook configuration de base', 999),
+('MacBook configuration performance', 1999);
 
 -- --------------------------------------------------------
 
