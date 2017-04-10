@@ -140,10 +140,10 @@ text-align: center;
 			}
 		
 		quantity += operator;
-		total += operator*prix;
+		total += (100*Math.round(operator*prix))/100;
 		
 		$(this).parents(".model").find(".quantityProduct").val(quantity);
-		$(this).parents(".model").find(".prixQuant").text(quantity*prix +  ' \u20AC');
+		$(this).parents(".model").find(".prixQuant").text((100*Math.round(quantity*prix))/100 +  ' \u20AC');
 		
 		$("#prixTotal").attr("data-total",total);
 		$("#prixTotal").text("total : " + total + " \u20AC" );
@@ -188,7 +188,7 @@ text-align: center;
 				var prixCart = cart[idProd].prixCart;
 				var quantityCart = cart[idProd].quantityCart;
 			
-				total +=  prixCart * quantityCart;
+				total +=  (100*Math.round(prixCart * quantityCart))/100;
 			}
 		
 			$("#prixTotal").attr("data-total",total);
@@ -202,17 +202,29 @@ text-align: center;
 		
 		
 		
-		var total = parseFloat( $("#prixTotal").attr("data-total") );
+		var total = parseFloat( 100*Math.round($("#prixTotal").attr("data-total"))/100 );
 		var subtotal = cart[idProd].prixCart*cart[idProd].quantityCart;
 		
 		total -= subtotal;
 		
-		$("#prixTotal").attr("data-total", total).text("Total : " + total + "\u20AC" );
+		
+		
+		
 		
 		delete cart[idProd];
+		if (cart == undefined) {
+			total = 0;
+		}
 		$.cookie("Cart",cart)
 			
 		$(this).parents(".model").remove()
+		
+		console.log($.cookie("Cart"))
+		
+		
+		$("#prixTotal").attr("data-total", total).text("Total : " + total + "\u20AC" );
+		
+		
 		
 	});
 	

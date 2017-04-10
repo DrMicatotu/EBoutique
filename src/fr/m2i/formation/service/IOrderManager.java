@@ -10,7 +10,7 @@ public interface IOrderManager {
 
 	public int createOrder(String user, double prix);
 	
-	public void createOrderRow(int idOrder, int idProduct, double prixU, int quantity, String user);
+	public void createOrderRow(int idOrder, int idProduct, String nomProduct,double prixU, int quantity, String user);
 	
 	public List<?> getOrders();
 	

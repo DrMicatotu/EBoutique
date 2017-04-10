@@ -10,17 +10,16 @@
 -- déjà dans la base (cas où vous voulez repartir d'un 
 -- environnement "propre").
 -- 
-/*
- DROP TABLE product_has_component ;
- DROP TABLE user_has_group ;
- DROP TABLE emarket_user ;
- DROP TABLE product ;
- DROP TABLE component ;
- DROP TABLE groupe ;
+
+-- DROP TABLE product_has_component ;
+-- DROP TABLE user_has_group ;
+-- DROP TABLE orders ;orders
+-- DROP TABLE emarket_user ;
+-- DROP TABLE product ;
+-- DROP TABLE component ;
+-- DROP TABLE groupe ;
+-- DROP TABLE orders_item ;
  
- DROP TABLE orders ;
- DROP TABLE orders_item ;
- */
 
 
 -- DROP TABLE shoppingcartitem ;
@@ -43,10 +42,10 @@ CREATE TABLE product (
 --
 
 INSERT INTO product (name, selling_price) VALUES
-('PC configuration de base', 399.99),
-('PC configuration jeux vidéos', 799.99),
-('MacBook configuration de base', 999),
-('MacBook configuration performance', 1999);
+('PC configuration de base', 399.90),
+('PC configuration jeux vidéos', 799.90),
+('MacBook configuration de base', 999.90),
+('MacBook configuration performance', 1999.90);
 
 -- --------------------------------------------------------
 
@@ -221,11 +220,11 @@ CREATE TABLE orders_item (
 id INT NOT NULL AUTO_INCREMENT,
 id_orders INT NOT NULL ,
 id_product INT NOT NULL ,
+nom_product VARCHAR(255),
 prix_unit DOUBLE NOT NULL,
 quantity INT NOT NULL ,
-user_ordering VARCHAR(50) NOT NULL ,
 PRIMARY KEY (id) ,
-CONSTRAINT fk_orders_id
+CONSTRAINT fk_orders_idorders_itemorders_item
     FOREIGN KEY (id_orders )
     REFERENCES orders (id )
     ON DELETE NO ACTION
@@ -234,12 +233,6 @@ CONSTRAINT fk_orders_product
     FOREIGN KEY (id_product )
     REFERENCES product (id )
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-CONSTRAINT fk_orders_user
-    FOREIGN KEY (user_ordering )
-    REFERENCES orders (user_login )
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION
-
 
 );

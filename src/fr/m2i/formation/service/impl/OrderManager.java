@@ -63,7 +63,7 @@ public class OrderManager implements IOrderManager {
 		
 	
 	@Override
-	public void createOrderRow(int idOrder, int idProduct, double prixU, int quantity, String user) {
+	public void createOrderRow(int idOrder, int idProduct,String nomProduct, double prixU, int quantity, String user) {
 		
 		try {
 			initContext = new InitialContext();
@@ -71,14 +71,15 @@ public class OrderManager implements IOrderManager {
 			DataSource ds = (DataSource) envContext.lookup("jdbc/eboutiqueDb");
 			connection = ds.getConnection();
 			
-			String sql = "INSERT INTO orders_item (id_orders,id_product,prix_unit,quantity,user_ordering) VALUES(?,?,?,?,?)";
+			String sql = "INSERT INTO orders_item (id_orders,id_product,nom_product,prix_unit,quantity) VALUES(?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			
 			statement.setInt(1, idOrder);
 			statement.setInt(2, idProduct);
-			statement.setDouble(3, prixU);
-			statement.setInt(4, quantity);
-			statement.setString(5, user);
+			statement.setString(3, nomProduct);
+			statement.setDouble(4, prixU);
+			statement.setInt(5, quantity);
+			
 			int nbLignes = statement.executeUpdate();
 			
 			
