@@ -1,14 +1,6 @@
 
 
-<!-- Bootstrap Core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="css/shop-homepage.css" rel="stylesheet">
-
-<!-- Footer -->
-<link href="css/CSSFooter.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"	rel="stylesheet">
 
 
 

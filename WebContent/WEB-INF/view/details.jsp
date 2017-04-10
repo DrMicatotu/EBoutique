@@ -1,11 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
 <head>
 <title>Catalogue Eboutique</title>
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/shop-homepage.css" rel="stylesheet">
+
+<!-- Footer -->
+<link href="css/CSSFooter.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"	rel="stylesheet">
 </head>
 
 	<style>
@@ -19,6 +28,14 @@
 
 
 	<%@include file="/WEB-INF/view/header.jsp"%>
+	
+	<div class="jumbotron container-fluid col-xs-offset-11"
+		style="padding-top: 0px; padding-bottom: 0px;">
+		<h4>
+			&nbsp;&nbsp;&nbsp;<a href="DeconnectServlet" class="text-xs-left">Deconnection</a>
+		</h4>
+
+	</div>
 
 	<div class="container">
 		<div class="jumbotron">
@@ -80,7 +97,7 @@
 							${info[2]}&euro;</h2>
 					</div>
 
-					<div class="row model">
+					<div class="row model btn-group col-xs-offset-4">
 
 						<input type="submit" class="btn btn-default col-xs-2 col-xs-offset-3 btnPlusMinus" value="-" data-op="minus" />
 						<input type="text"  value="1" class="col-xs-2 form-control quantityProduct" style="width: 55px"/>
