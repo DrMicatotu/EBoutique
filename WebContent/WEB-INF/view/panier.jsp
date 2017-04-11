@@ -47,8 +47,8 @@ text-align: center;
 				
 				<div class='col-xs-6 col-xs-offset-1 nameProduct'>nom du produit</div>
 				<div class='col-xs-1 prixUnit'>prix unitaire</div>
-				<div class="col-xs-1 col-xs-offset-1">Quantitity</div>
-				<div class='col-xs-1 prixQuant col-xs-offset-1'  >sous-totaux</div>
+				<div class="col-xs-1 col-xs-offset-1">Quantitée</div>
+				<div class='col-xs-1 prixQuant col-xs-offset-1'  >sous-total</div>
 				
 			</div>
 			<br/><br/>
@@ -116,9 +116,9 @@ text-align: center;
 			var ligne = $("#cartList").find(".model").eq(rowNumb);
 			ligne.find(".nameProduct").text(nameCart);
 			ligne.find(".quantityProduct").val(quantityCart);
-			ligne.find(".prixUnit").text(prixCart + ' \u20AC');
+			ligne.find(".prixUnit").text(prixCart.toFixed(2) + ' \u20AC');
 			ligne.find(".prixUnit").attr("data-price",prixCart);
-			ligne.find(".prixQuant").text(subtotal + ' \u20AC');
+			ligne.find(".prixQuant").text(subtotal.toFixed(2) + ' \u20AC');
 			ligne.find(".removeProduct").attr("data-id",idProd);
 			rowNumb++;
 						
@@ -140,13 +140,14 @@ text-align: center;
 			}
 		
 		quantity += operator;
-		total += (100*Math.round(operator*prix))/100;
+		total += operator*prix.toFixed(2);
+		var sousTotal = quantity*prix
 		
 		$(this).parents(".model").find(".quantityProduct").val(quantity);
-		$(this).parents(".model").find(".prixQuant").text((100*Math.round(quantity*prix))/100 +  ' \u20AC');
+		$(this).parents(".model").find(".prixQuant").text(sousTotal.toFixed(2) +  ' \u20AC');
 		
-		$("#prixTotal").attr("data-total",total);
-		$("#prixTotal").text("total : " + total + " \u20AC" );
+		$("#prixTotal").attr("data-total",total.toFixed(2));
+		$("#prixTotal").text("total : " + total.toFixed(2) + " \u20AC" );
 		
 		var cart = $.cookie("Cart");
 		var idCart = $(this).parents(".model").find(".removeProduct").attr("data-id");
@@ -169,9 +170,9 @@ text-align: center;
 				$(this).parents(".model").find(".quantityProduct").val(parseInt(quantity));
 			}
 		
+		var sousTotal = quantity*prix; 
 		
-		
-		$(this).parents(".model").find(".prixQuant").text(quantity*prix +  ' \u20AC');
+		$(this).parents(".model").find(".prixQuant").text( sousTotal.toFixed(2) +  ' \u20AC');
 		
 		var total = 0;
 		
@@ -188,11 +189,11 @@ text-align: center;
 				var prixCart = cart[idProd].prixCart;
 				var quantityCart = cart[idProd].quantityCart;
 			
-				total +=  (100*Math.round(prixCart * quantityCart))/100;
+				total +=  prixCart * quantityCart;
 			}
 		
-			$("#prixTotal").attr("data-total",total);
-			$("#prixTotal").text("total : " + total + " \u20AC" );
+			$("#prixTotal").attr("data-total",total.toFixed(2));
+			$("#prixTotal").text("total : " + total.toFixed(2) + " \u20AC" );
 		
 		});
 	
@@ -202,7 +203,7 @@ text-align: center;
 		
 		
 		
-		var total = parseFloat( 100*Math.round($("#prixTotal").attr("data-total"))/100 );
+		var total = parseFloat( ($("#prixTotal").attr("data-total") ) );
 		var subtotal = cart[idProd].prixCart*cart[idProd].quantityCart;
 		
 		total -= subtotal;
@@ -222,7 +223,7 @@ text-align: center;
 		console.log($.cookie("Cart"))
 		
 		
-		$("#prixTotal").attr("data-total", total).text("Total : " + total + "\u20AC" );
+		$("#prixTotal").attr("data-total", total.toFixed(2)).text("Total : " + total.toFixed(2) + "\u20AC" );
 		
 		
 		
