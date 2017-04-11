@@ -52,6 +52,7 @@ public class LoginServlet extends HttpServlet {
 			try {
 				HttpSession session = request.getSession();
 				session.setAttribute("identification", user.getRole());
+				session.setAttribute("login", login);
 				request.getRequestDispatcher(mapUser.get(user.getRole())).forward(request, response);
 			} catch (ServletException e) {
 
